@@ -203,7 +203,11 @@
         <img src="./assets/GANESH.jpg" alt="GANESH KOLAM" class="w-32 h-32 mb-3"/>
         <h4 class="font-semibold text-lg text-blue-900 mb-1">GANESH KOLAM</h4>
         <p class="text-slate-700 text-sm mb-3 text-center">Invokes wisdom and removes obstacles.</p>
-        <button onclick="downloadSVG('./assets/GANESH.jpg','GANESH_KOLAM')" class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">Download SVG</button>
+        <button onclick="downloadImage('./assets/GANESH.jpg','GANESH_KOLAM')" 
+  class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
+  Download
+</button>
+
       </div>
       <!-- Add other Kolam cards similarly -->
         <!-- Kolam Card 2 -->
@@ -213,9 +217,11 @@
       <p class="text-slate-700 text-sm mb-3 text-center">
         Attracts prosperity, wealth, and positive energy into the household.
       </p>
-      <button onclick="downloadSVG('./assets/LAKSHMI.jpg','LAKSHMI KOLAM')" class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
-        Download SVG
-      </button>
+      <button onclick="downloadImage('./assets/LAKSHMI.jpg','LAKSHMI_KOLAM')" 
+  class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
+  Download
+</button>
+
     </div>
     <!-- Kolam Card 3 -->
     <div class="rounded overflow-hidden shadow-lg bg-white p-4 flex flex-col items-center">
@@ -224,9 +230,11 @@
       <p class="text-slate-700 text-sm mb-3 text-center">
         Welcomes knowledge, learning, and creative inspiration.
       </p>
-      <button onclick="downloadSVG('./assets/SARASWATI.jpg','SARASWATI KOLAM')" class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
-        Download SVG
-      </button>
+      <button onclick="downloadImage('./assets/SARASWATI.jpg','SARASWATI_KOLAM')" 
+  class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
+  Download
+</button>
+
     </div>
      <!-- Kolam Card 4 -->
     <div class="rounded overflow-hidden shadow-lg bg-white p-4 flex flex-col items-center">
@@ -235,9 +243,11 @@
       <p class="text-slate-700 text-sm mb-3 text-center">
         Brings protection, stability, and divine blessings to the home.
       </p>
-      <button onclick="downloadSVG('./assets/VISHNU.jpg','VISHNU KOLAM')" class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
-        Download SVG
-      </button>
+      <button onclick="downloadImage('./assets/VISHNU.jpg','VISHNU_KOLAM')" 
+  class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
+  Download
+</button>
+
     </div>
      <!-- Kolam Card 5 -->
     <div class="rounded overflow-hidden shadow-lg bg-white p-4 flex flex-col items-center">
@@ -246,9 +256,11 @@
       <p class="text-slate-700 text-sm mb-3 text-center">
         Channels abundance, spiritual harmony, and cosmic energy.
       </p>
-      <button onclick="downloadSVG('./assets/SHREE YANTRA.jpg','SHREE YANTRA KOLAM')" class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
-        Download SVG
-      </button>
+      <button onclick="downloadImage('./assets/SHREE YANTRA.jpg','SHREE YANTRA_KOLAM')" 
+  class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
+  Download
+</button>
+
     </div>
      <!-- Kolam Card 6 -->
     <div class="rounded overflow-hidden shadow-lg bg-white p-4 flex flex-col items-center">
@@ -257,9 +269,11 @@
       <p class="text-slate-700 text-sm mb-3 text-center">
         Symbolizes the union of divine masculine and feminine energies, representing creation and balance.
       </p>
-      <button onclick="downloadSVG('./assets/SHIVA SHAKTI.jpg','SHIVA SHAKTI KOLAM')" class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
-        Download SVG
-      </button>
+      <button onclick="downloadImage('./assets/SHIVA SHAKTI.jpg','SHIVA SHAKTI_KOLAM')" 
+  class="px-4 py-2 rounded bg-pink-500 text-white font-semibold hover:opacity-90">
+  Download
+</button>
+
     </div>
   </div>
 </div>
@@ -323,19 +337,19 @@
   <p class="text-slate-700 mt-2">GitHub: <a href="#" class="text-purple-700">your-repo-link</a></p>
 </div>
 <script>
-  function downloadSVG(url, name) {
+function downloadImage(url, name) {
   fetch(url)
     .then(response => response.blob())
     .then(blob => {
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = `${name}.svg`; // ✅ correct
- // ✅ fixed with backticks
+      link.download = `${name}.jpg`;  // saves as JPG
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     });
 }
+
 
   function showSection(id) {
   document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
